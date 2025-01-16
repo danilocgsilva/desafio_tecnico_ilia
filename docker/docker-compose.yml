@@ -2,7 +2,8 @@ services:
   pokemon_tcg:
     build:
       context: .
-    container_name: pockermon_tcg
+    container_name: pokemon_tcg
     volumes:
       - './../:/app/'
       - '/app/docker/'
+    working_dir: /app
