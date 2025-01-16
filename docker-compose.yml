@@ -1,5 +1,0 @@
-services:
-  pokemon_tcg:
-    build:
-      context: .
-    container_name: pockermon_tcg
