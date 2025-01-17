@@ -15,7 +15,7 @@ RUN curl -sL https://deb.nodesource.com/setup_20.x | bash -
 RUN apt-get install -y nodejs
 
 # Instalação de utilitários que serão utilizados dentro do container
-RUN apt-get install vim git -y
+RUN apt-get install vim git zip -y
 
 # Configuração local do git, necessário para a instalação do Symfony e
 #   para operaçẽos com git de dentro do container
@@ -23,5 +23,8 @@ RUN git config --global user.email $GIT_EMAIL
 RUN git config --global user.name $GIT_USER
 RUN git config --global --add safe.directory /app
 
+COPY startup.sh /startup.sh
+RUN chmod +x /startup.sh
+
 # Inicia o servidor para desenvolvimento
-CMD symfony server:start --listen-ip=0.0.0.0
+CMD /startup.sh

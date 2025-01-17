@@ -21,3 +21,10 @@ Uma vez feita a configuração, basta seguir os seguintes passos, que serão nec
 ```
 docker compose up -d --build
 ```
+
+## Acessando a aplicação
+
+Ao executar a receita do Docker, uma aplicação de desenvolvimento irá ser levantada e servida na porta 8000, no ip 0.0.0.0. Com isso, é possível acessar no ambiente de host pelo endereço localhost ou 0.0.0.0, na porta 8000:
+```
+http://localhost:8000
+```
