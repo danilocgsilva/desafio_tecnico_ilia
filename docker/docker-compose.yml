@@ -2,6 +2,9 @@ services:
   pokemon_tcg:
     build:
       context: .
+      args:
+        GIT_USER: ${GIT_USER}
+        GIT_EMAIL: ${GIT_EMAIL}
     container_name: pokemon_tcg
     volumes:
       - './../:/app/'
