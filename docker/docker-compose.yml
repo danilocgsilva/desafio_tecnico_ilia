@@ -6,6 +6,8 @@ services:
         GIT_USER: ${GIT_USER}
         GIT_EMAIL: ${GIT_EMAIL}
     container_name: pokemon_tcg
+    ports:
+      - 8000:8000
     volumes:
       - './../:/app/'
       - '/app/docker/'

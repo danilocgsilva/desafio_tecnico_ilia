@@ -23,5 +23,5 @@ RUN git config --global user.email $GIT_EMAIL
 RUN git config --global user.name $GIT_USER
 RUN git config --global --add safe.directory /app
 
-# Comando para "segurar" o docker durante o desenvolvimento.
-CMD while : ; do sleep 1000; done
+# Inicia o servidor para desenvolvimento
+CMD symfony server:start --listen-ip=0.0.0.0
