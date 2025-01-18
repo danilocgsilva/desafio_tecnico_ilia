@@ -1,2 +1,130 @@
 @use "~bootstrap/scss/bootstrap";
 
+:root {
+    --borda-cor: rgb(219, 205, 126);
+    --borda-cor-hover: rgb(219, 182, 126);
+}
+
+a {
+    text-decoration: none;
+}
+
+.list-item {
+    text-align: left;
+}
+
+.header-tipos {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.type-lightning {
+    background-color: rgb(255, 238, 0);
+    border: 1px solid black;
+}
+
+.type-grass {
+    background-color: rgb(92, 247, 105);
+    border-color: rgb(26, 143, 36);
+    color: rgb(10, 90, 17);
+}
+
+.type-water {
+    background-color: rgb(87, 228, 233);
+    border-color: rgb(31, 72, 185);
+    color: rgb(22, 10, 90);
+}
+
+.type-psychic {
+    background-color: rgb(208, 141, 252);
+    border-color: rgb(63, 26, 133);
+    color: rgb(34, 4, 83);
+}
+
+.type-darkenss {
+    background-color: rgb(0, 0, 0);
+    border-color: rgb(0, 0, 0);
+    color: rgb(230, 230, 230);
+}
+
+.type-fire {
+    background-color: rgb(255, 100, 100);
+    border-color: rgb(114, 11, 11);
+    color: rgb(59, 3, 3);
+}
+
+.list-item::before {
+    content: "→";
+    font-size: 60px;
+    line-height: 0.4rem;
+    // padding-top: 15px;
+    // margin-top: 30px;
+    vertical-align: sub;
+}
+
+body {
+    background-color: rgb(245, 244, 231);
+}
+
+.card-moving {
+    padding: 0 2px 2px 0;
+}
+
+.card-moving:active {
+    padding: 2px 0 0 2px;
+}
+
+.card-deck {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px 30px;
+}
+
+.card {
+    color: rgb(138, 110, 74);
+    width: 380px;
+    text-decoration: none;
+    border-color: var(--borda-cor);
+}
+
+.card-header {
+    border-color: var(--borda-cor);
+    background-color: rgb(232, 238, 209);
+}
+
+.card:hover {
+    border-color: var(--borda-cor-hover);
+}
+
+.card:hover .card-body {
+    background-color: rgb(243, 238, 220);
+}
+
+.card:hover .card-header {
+    background-color: rgb(245, 220, 199);
+    border-color: var(--borda-cor-hover);
+}
+
+// .card-body {
+//     background-color: #f00;
+// }
+
+
+
+// .card-body {
+//     background-color: rgb(247, 248, 242);
+// }
+
+// .card-body:hover {
+//     background-color: rgb(255, 232, 196);
+// }
+
+.my-shadow {
+    box-shadow: var(--bs-box-shadow);
+}
+
+.card-link:hover {
+    box-shadow: 4px 8px 20px rgba(156, 93, 42, 0.4);
+}

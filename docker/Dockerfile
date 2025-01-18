@@ -10,12 +10,18 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ 
 RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 
+# Instalando e ativando o xdebug
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
 # Instalação do node, já que quero compilar o frontend com o Encore.
 RUN curl -sL https://deb.nodesource.com/setup_20.x | bash - 
 RUN apt-get install -y nodejs
 
 # Instalação de utilitários que serão utilizados dentro do container
 RUN apt-get install vim git zip -y
+
+# Colocando as configurações de xdebug no container
+COPY xdebug.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # Configuração local do git, necessário para a instalação do Symfony e
 #   para operaçẽos com git de dentro do container

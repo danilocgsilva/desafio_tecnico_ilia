@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello PokemonTcgController!
+{% block title %}
+  Hello PokemonTcgController!
 {% endblock %}
 
 {% block body %}
-
-
-
+  <div class="container">
+    <div class="card-deck mb-3 text-center">
+      {% for pokemon in pokemons %}
+        {% include 'card_index.html.twig' with { 'pokemin': pokemon } %}
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}

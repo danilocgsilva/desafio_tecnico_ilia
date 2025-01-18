@@ -1,0 +1,25 @@
+<a href="#" class="card-moving">
+    <div class="card mb-4 my-shadow mb-5 bg-body rounded card-link">
+        <div class="card-header">
+            <h4 class="my-0 font-weight-normal">
+                {{ pokemon.pokemonId }}
+            </h4>
+        </div>
+        <div class="card-body">
+            <h1 class="card-title">
+                {{ pokemon.name }}
+            </h1>
+            <img src="{{ pokemon.imageUrl }}" />
+            <h3 class="header-tipos">
+                O pokemon é dos tipos:
+            </h3>
+            <ul class="list-group">
+                {% for type in pokemon.types %}
+                    <li class="list-group-item list-item {{ type|typestyles }}">
+                        {{ type }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</a>
