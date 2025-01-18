@@ -42,6 +42,18 @@ class PokemonsRepositoryTest extends KernelTestCase
         $this->assertInstanceOf(PokemonDataFull::class, $singlePokemon);
     }
 
+    public function testGetByIdAndCheckName(): void
+    {
+        $container = static::getContainer();
+
+        $this->setupGuzzleMockedSingle($container);
+
+        $pokemonsRepository = new PokemonsRepository($this->getMockedGuzzleClient());
+
+        $singlePokemon = $pokemonsRepository->getById("dp3-1");
+        $this->assertSame("Ampharos", $singlePokemon->name);
+    }
+
     public function testGetByNonExistingId(): void
     {
         $this->expectException(ClientException::class);
