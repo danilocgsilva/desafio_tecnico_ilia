@@ -12,7 +12,7 @@ use App\Repositories\PokemonsRepository;
 final class PokemonTcgController extends AbstractController
 {
     #[Route('/', name: 'app_pokemon_redirect')]
-    public function home(PokemonsRepository $pokemonsRepository): Response
+    public function home(): Response
     {
         return $this->redirectToRoute('app_pokemon_tcg');
     }
