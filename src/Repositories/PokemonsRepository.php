@@ -3,19 +3,19 @@
 namespace App\Repositories;
 
 use App\Data\{PokemonData, PokemonDataFull};
-use GuzzleHttp\Client;
+use GuzzleHttp\Client as GuzzleClient;
 use stdClass;
 use App\Services\PokemonMapper;
 
 class PokemonsRepository
 {
-    private Client $client;
+    private GuzzleClient $client;
 
     const ENDERECO_API = "https://api.pokemontcg.io";
     
-    public function __construct()
+    public function __construct(GuzzleClient $guzzleClient)
     {
-        $this->client = new Client();
+        $this->client = $guzzleClient;
     }
     
     /**

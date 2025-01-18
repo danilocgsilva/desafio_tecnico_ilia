@@ -22,8 +22,6 @@ a {
         line-height: 0.4rem;
         vertical-align: sub;
     }
-
-
 }
 
 .list-ataque {
@@ -125,6 +123,7 @@ a {
     &-header {
         border-color: var(--borda-cor);
         background-color: rgb(232, 238, 209);
+        text-align: center;
     }
     &-link:hover {
         box-shadow: 4px 8px 20px rgba(156, 93, 42, 0.4);
@@ -160,4 +159,15 @@ a {
 .large-card-body-separator {
     box-sizing: content-box;
     width: 50%;
+}
+
+.pokemon-nav {
+    margin-left: 3em;
+    a {
+      text-decoration: underline;  
+    }
+}
+
+.card-title-large {
+    text-align: center;
 }

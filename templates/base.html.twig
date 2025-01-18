@@ -20,8 +20,15 @@
     <header>
       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 class="my-0 mr-md-auto font-weight-normal">
-          Pokemon TCG!!!
+    Pokemon TCG!!!{% if pokemon|default(null) %} - {{ pokemon.name }} {% endif %}
         </h5>
+        <nav class="my-2 my-md-0 mr-md-3 pokemon-nav">
+          {% if app.request.attributes.get('_route') != "app_pokemon_tcg" %}
+            <a class="p-2 text-dark" href="{{ path("app_pokemon_tcg") }}">
+              Voltar para a listagem dos pokemons
+            </a>
+          {% endif %}
+        </nav>
       </div>
     </header>
     <main>

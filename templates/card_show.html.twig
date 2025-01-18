@@ -5,7 +5,7 @@
         </h4>
     </div>
     <div class="card-body">
-        <h1 class="card-title">
+        <h1 class="card-title card-title-large">
             {{ pokemon.name }}
         </h1>
 
@@ -77,13 +77,12 @@
                     {% for ataque in pokemon.ataques %}
                         <li class="list-group-item list-item list-ataque">
                             Tipo:
-                            <strong>
-                                {{ ataque.nome }}
-                            </strong>
-                            , dano:
-                            <strong>
-                                {{ ataque.dano }}
-                            </strong>
+                            <strong>{{ ataque.nome }}</strong>, 
+                                {% if ataque.dano == "" %}
+                                    sem informação de dano
+                                {% else %}
+                                    dano: <strong>{{ ataque.dano }}</strong>
+                                {% endif %}
                         </li>
                     {% endfor %}
                 </ul>
