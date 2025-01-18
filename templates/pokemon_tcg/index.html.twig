@@ -1,14 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Hello PokemonTcgController!
+  Listagem das cartas
 {% endblock %}
 
 {% block body %}
+
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h1 class="display-4">
+      Pegue sua carta pokemon
+    </h1>
+    <p class="lead">
+      Escolha a sua carta para ver mais detalhes do seu pokemon!
+    </p>
+  </div>
+
   <div class="container">
     <div class="card-deck mb-3 text-center">
       {% for pokemon in pokemons %}
-        {% include 'card_index.html.twig' with { 'pokemin': pokemon } %}
+        {% include 'card_index.html.twig' %}
       {% endfor %}
     </div>
   </div>

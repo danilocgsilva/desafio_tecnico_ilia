@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Twig;
 
 use Twig\Extension\AbstractExtension;
@@ -29,6 +31,12 @@ class AppExtension extends AbstractExtension
                 return "type-darkenss";
             case "Fire":
                 return "type-fire";
+            case "Fighting":
+                return "type-fighting";
+            case "Dragon":
+                return "type-dragon";
+            case "Metal":
+                return "type-metal";
             default:
                 return "type-generic";
         }

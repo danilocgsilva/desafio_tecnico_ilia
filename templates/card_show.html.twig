@@ -1,0 +1,95 @@
+<div class="card mb-4 my-shadow mb-5 bg-body rounded">
+    <div class="card-header">
+        <h4 class="my-0 font-weight-normal">
+            {{ pokemon.pokemonId }}
+        </h4>
+    </div>
+    <div class="card-body">
+        <h1 class="card-title">
+            {{ pokemon.name }}
+        </h1>
+
+        <div class="large-card-separator-container">
+            <div class="large-card-body-separator card-imagem-left">
+                <img src="{{ pokemon.imageUrl }}" />
+            </div>
+
+            <div class="large-card-body-separator">
+
+                <h3 class="header-tipos">
+                    {{ pokemon.types|length > 1 ? "O pokemon é dos tipos:" : "O pokemon é do tipo:" }}
+                </h3>
+                <ul class="list-group">
+                    {% for type in pokemon.types %}
+                        <li class="list-group-item list-item {{ type|typestyles }}">
+                            {{ type }}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <h3 class="header-tipos">
+                    Resistências
+                </h3>
+
+                {% if pokemon.resistencias|length > 0 %}
+                    <ul class="list-group">
+                        {% for resistencia in pokemon.resistencias %}
+                            <li class="list-group-item list-item {{ resistencia.tipo|typestyles }}">
+                                Tipo:
+                                <strong>
+                                    {{ resistencia.tipo }}
+                                </strong>
+                                , valor:
+                                <strong>
+                                    {{ resistencia.valor }}
+                                </strong>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>
+                        Este pokemon não possui resistências específicas!
+                    </p>
+                {% endif %}
+
+                <h3 class="header-tipos">
+                    Fraquezas
+                </h3>
+                <ul class="list-group">
+                    {% for fraqueza in pokemon.fraquezas %}
+                        <li class="list-group-item list-item {{ fraqueza.tipo|typestyles }}">
+                            Tipo:
+                            <strong>
+                                {{ fraqueza.tipo }}
+                            </strong>
+                            , valor:
+                            <strong>
+                                {{ fraqueza.valor }}
+                            </strong>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <h3 class="header-tipos">
+                    Lista dos ataques
+                </h3>
+                <ul class="list-group">
+                    {% for ataque in pokemon.ataques %}
+                        <li class="list-group-item list-item list-ataque">
+                            Tipo:
+                            <strong>
+                                {{ ataque.nome }}
+                            </strong>
+                            , dano:
+                            <strong>
+                                {{ ataque.dano }}
+                            </strong>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+</div>
